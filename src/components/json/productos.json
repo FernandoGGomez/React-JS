@@ -1,0 +1,204 @@
+[
+    {
+        "id": 1,
+        "nombre": "Intel Pentium Gold G7400",
+        "descripcion": "12th Generación. Socket S1700",
+        "precio": 8858,
+        "stock": 3,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_946417-MLA52279931619_112022-W.webp",
+        "destacado": 1,
+        "marca": "Intel",
+        "categoria": "procesador"
+    },
+    {
+        "id": 2,
+        "nombre": "Intel Celeron G6900 3.5GHz",
+        "descripcion": "12th Generación. Socket S1700",
+        "precio": 5907,
+        "stock": 27,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_882269-MLA50303983309_062022-V.webp",
+        "destacado": 1,
+        "marca": "Intel",
+        "categoria": "procesador"
+
+
+    },
+    {
+
+        "id": 3,
+        "nombre": "Intel i3 12100F",
+        "descripcion": "12th Generación. Sin video. Socket S1700",
+        "precio": 8858,
+        "stock": 38,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_856443-MLA49521591992_032022-W.webp",
+        "destacado": 1,
+        "marca": "Intel",
+        "categoria": "procesador"
+
+
+    },
+    {
+        "id": 4,
+        "nombre": "Intel i3 12100",
+        "descripcion": "12th Generación. Video integrado. Socket S1700",
+        "precio": 23371,
+        "stock": 15,
+        "img": "https://http2.mlstatic.com/D_716625-MLA50435076694_062022-O.jpg",
+        "destacado": 1,
+        "marca": "Intel",
+        "categoria": "procesador"
+    },
+    {
+        "id": 5,
+        "nombre": "AMD Ryzen 5 5600G",
+        "descripcion": "Procesador gamer AMD Ryzen 5 5600G 100-100000252BOX de 6 núcleos y 4.4GHz de frecuencia con gráfica integrada",
+        "precio": 8858,
+        "stock": 1,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_906389-MLA50355579179_062022-W.webp",
+        "destacado": 1,
+        "marca": "amd",
+        "categoria": "procesador"
+    },
+    {
+        "id": 6,
+        "nombre": "AMD Ryzen 9 5900X",
+        "descripcion": "Procesador gamer AMD Ryzen 9 5900X 100-100000061WOF de 12 núcleos y 4.8GHz de frecuencia",
+        "precio": 5907,
+        "stock": 50,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_871821-MLA44771394957_022021-W.webp",
+        "destacado": 1,
+        "marca": "amd",
+        "categoria": "procesador"
+    },
+
+    {
+        "id": 7,
+        "nombre": "AMD Ryzen 7 5800X",
+        "descripcion": "Procesador Amd Ryzen 7 5800x 8 Nucleos 4.7ghz Am4",
+        "precio": 8858,
+        "stock": 100,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_933384-MLA43994102400_112020-W.webp",
+        "destacado": 1,
+        "marca": "amd",
+        "categoria": "procesador"
+    },
+    {
+        "id": 8,
+        "nombre": "AMD Ryzen 5 5600X",
+        "descripcion": "Procesador gamer AMD Ryzen 5 5600X 100-100000065BOX de 6 núcleos y 4.6GHz de frecuencia",
+        "precio": 23371,
+        "stock": 20,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_806834-MLA44347094824_122020-W.webp",
+        "destacado": 1,
+        "marca": "amd",
+        "categoria": "procesador"
+    },
+    {
+        "id": 9,
+        "nombre": "AMD Radeon rx 6900XT Gigabyte",
+        "descripcion": "Placa de video AMD Gigabyte Gaming Radeon RX 6900 Series RX 6900 XT GV-R69XTGAMING OC-16GD 16GB",
+        "precio": 23371,
+        "stock": 15,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_994037-MLA51902195388_102022-O.webp",
+        "destacado": 1,
+        "marca": "amd",
+        "categoria": "placa_video"
+    },
+    {
+        "id": 10,
+        "nombre": "AMD Radeon rx 6750XT Gigabyte",
+        "descripcion": "Placa De Video Gigabyte Radeon Rx 6750 Xt Gaming Oc 12g",
+        "precio": 8858,
+        "stock": 1,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_684425-MLA52367169656_112022-O.webp",
+        "destacado": 1,
+        "marca": "amd",
+        "categoria": "placa_video"
+    },
+    {
+        "id": 11,
+        "nombre": "Gigabyte Aorus RTX 3070",
+        "descripcion": "Placa de video Nvidia Gigabyte Aorus GeForce RTX 30 Series RTX 3070 GV-N3070AORUS M-8GD (REV 1.0/1.1) 8GB",
+        "precio": 5907,
+        "stock": 50,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_889098-MLA45269211600_032021-O.webp",
+        "destacado": 1,
+        "marca": "nvidia",
+        "categoria": "placa_video"
+    },
+
+    {
+        "id": 12,
+        "nombre": "Asus RTX 2060",
+        "descripcion": "Placa de video Nvidia Asus Dual GeForce RTX 20 Series RTX 2060 DUAL-RTX2060-O6G-EVO OC Edition 6GB",
+        "precio": 8858,
+        "stock": 100,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_739109-MLA49851666445_052022-O.webp",
+        "destacado": 1,
+        "marca": "nvidia",
+        "categoria": "placa_video"
+    },
+    {
+        "id": 13,
+        "nombre": "MSI Geforce GTX 1660 SUPER",
+        "descripcion": "Placa de video Nvidia MSI Ventus XS GeForce GTX 16 Series GTX 1660 SUPER GEFORCE GTX 1660 SUPER VENTUS XS OC OC Edition 6GB",
+        "precio": 23371,
+        "stock": 20,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_666876-MLA51899038655_102022-O.webp",
+        "destacado": 1,
+        "marca": "nvidia",
+        "categoria": "placa_video"
+    },
+    {
+        "id": 14,
+        "nombre": "Asus Prime B460m-a S1200 Intel",
+        "descripcion": "Motherboard Asus Prime B460m-a S1200 Intel B460 Hdmi R2.0",
+        "precio": 8858,
+        "stock": 1,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_799372-MLA48026435344_102021-O.webp",
+        "destacado": 1,
+        "marca": "asus",
+        "plataforma":"intel",
+        "categoria": "placa_madre"
+    },
+    {
+        "id": 15,
+        "nombre": "Gigabyte H510m-h Intel",
+        "descripcion": "Motherboard Gigabyte H510m-h Intel 10ma 11va Gen Lga 1200 Pc",
+        "precio": 5907,
+        "stock": 50,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_939395-MLA46871617575_072021-O.webp",
+        "destacado": 1,
+        "marca": "gigabyte",
+        "plataforma":"intel",
+        "categoria": "placa_madre"
+    },
+
+    {
+        "id": 16,
+        "nombre": "Asus Prime A520m-a II Amd",
+        "descripcion": "Motherboard Asus Prime A520m-a Ii Amd Ryzen Aura Rgb Pcreg",
+        "precio": 8858,
+        "stock": 100,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_958763-MLA48364893070_112021-O.webp",
+        "destacado": 1,
+        "marca": "asus",
+        "plataforma":"amd",
+        "categoria": "placa_madre"
+    },
+    {
+        "id": 17,
+        "nombre": "Msi Mpg B550 Gaming Plus",
+        "descripcion": "Motherboard Msi Mpg B550 Gaming Plus Am4 Pcie M.2 Usb Atx",
+        "precio": 23371,
+        "stock": 20,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_701517-MLA51407811616_092022-O.webp",
+        "destacado": 1,
+        "marca": "msi",
+        "plataforma":"amd",
+        "categoria": "placa_madre"
+    }
+
+
+
+]
