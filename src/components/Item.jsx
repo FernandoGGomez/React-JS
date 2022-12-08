@@ -13,7 +13,7 @@ const Item = ({producto}) =>{
                         <div className="col-8">
                             <p className="h3">{producto.nombre}</p>
                             <p className="descripcion">{producto.descripcion.substring(0,40)}...</p>
-                            <p className="precio">$ {producto.precio} +</p>
+                            <p className="precio">$ {producto.precio}</p>
                         </div>
                         </Link>
                     </div>
