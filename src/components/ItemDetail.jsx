@@ -1,6 +1,27 @@
-import React from "react";
+import React,{ useState, useEffect, useContext } from "react";
+import ItemCount from "./ItemCount";
+import { CartContext } from "./context/CartContext";
+
 
 const ItemDetail = ({item})=>{
+    const {addItem } = useContext(CartContext);
+
+    const [itemStock,setItemStock] = useState(0);
+
+    const onAdd = (cantidad)=>{
+
+        setItemStock(itemStock - cantidad);
+        addItem(item,cantidad);
+        localStorage.setItem('carrito',JSON.stringify([item]))
+       
+
+    }
+
+    useEffect(() => {
+
+        setItemStock(item.stock);
+
+    },[item]);
 
  return <div className="row align-items-center">
 
@@ -12,7 +33,10 @@ const ItemDetail = ({item})=>{
                     <h2>{item.nombre}</h2>
                     <p className="descripcion">{item.descripcion}</p>
                     <p className="precio">$ {item.precio}</p>
+                    <div><ItemCount stock={item.stock} onAdd={onAdd}/></div>
                 </div>
+
+                
 
         </div>
 

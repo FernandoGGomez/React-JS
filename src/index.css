@@ -22,3 +22,127 @@ code {
   margin-left: 5px;
   font-size: 1.2rem;
 }
+
+/* Loader */
+.l{
+ 
+}
+.loader {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid rgb(0, 0, 0);
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border-left: 4px solid #0a9cf3;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+/* ------------------------------------------------ */
+
+.m{
+
+  background-color: rgba(0, 0, 0, 0.2)
+
+}
+.n{
+  background-color: #f1f1f1;
+}
+
+.div-filtro{
+  /* width: 400px; */
+  background-color: rgb(243, 236, 236);
+  /* height: 100%; */
+
+}
+
+.contenedor-filtros{
+  /* position: fixed; */
+  /* margin-top: 5%;
+  margin-left: 2%; */
+  display: flex;
+  list-style: none;
+}
+
+.btn-filtro{
+  /* display: list-item; */
+  /* margin-top: 5px; */
+  margin: 0px 10px;
+  /* font-size: small; */
+}
+
+.margen{
+  margin-top: 5%;
+  margin-left: 26%;
+}
+
+
+/* NAV */
+.contenedor-nav{
+  position: sticky;
+  top: 0.1px;
+  z-index: 90;
+  color:white;
+  background-color: black;
+}
+.menu{
+  display: none;
+}
+
+.menu.desplegado{
+
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin-top: 23%;
+  padding: 25px;
+  border-right: 3px solid #0a9cf3;
+  border-left: 3px solid #0a9cf3;;
+  border-bottom: 3px solid #0a9cf3;;
+  background-color: #000000
+
+
+}
+
+.nav-link{
+  color: white;
+  padding: 25px
+}
+.nav-link:hover{
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(rgba(10, 156, 243, 0.95) 0px 0px 2.20251px) drop-shadow(rgba(71, 123, 255, 0.75) 0px 0px 11.0125px) drop-shadow(rgba(71, 255, 218, 0.44) 0px 0px 33.0376px);
+}
+.navbar-nav .nav-link.active{
+  color: rgb(10, 156, 243);
+}
+.nav-link.active{
+  color: rgb(10, 156, 243);
+}
+
+@media screen and (max-width:480px) {
+
+  .navbar-brand{
+    display: none;
+  }
+
+}

@@ -1,11 +1,19 @@
-import React from "react";
+import React,{ useState } from "react";
 import { Link,NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const NavBar = () => {
+    const [menu,setMenu]= useState(false);
+
+    const mouseOver = () => {
+
+        setMenu(!menu);
+
+    }
+
     return (
 
-            <div className="container">
+            <div className="container contenedor-nav">
                 <div className="row">
                     <div className="col-7">
                         <nav className="navbar navbar-expand-lg">
@@ -15,10 +23,9 @@ const NavBar = () => {
                                 <span className="navbar-toggler-icon"></span>
                                 </button>
                                 <div className="collapse navbar-collapse" id="navbarNav">
-                                    <ul className="navbar-nav">
-                                    <li className="nav-item">
-                                            <NavLink className="nav-link" aria-current="page" to={"/"}>Todos los Productos</NavLink>
-                                        </li>
+                                <NavLink className="nav-link" onMouseOver={mouseOver} aria-current="page" to={"/"}>Todos los Productos</NavLink>
+                                    <ul className={`navbar-nav menu ${menu ? "desplegado":""}`}>
+                                    
                                         <li className="nav-item">
                                             <NavLink className="nav-link" aria-current="page" to={"/categoria/procesador"}>Procesadores</NavLink>
                                         </li>
