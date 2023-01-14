@@ -11,9 +11,9 @@ const Error404 = ()=>{
 
     useEffect(()=>{
 
-        const db = getFirestore();
-        const coleccionProductos = collection(db,"productos");
-        const q = query(coleccionProductos, where("precio", "<", 10000), limit(3));
+        const db = getFirestore(); //obtengo la base de datos
+        const coleccionProductos = collection(db,"productos");//obtengo la coleccion donde se guardan los productos
+        const q = query(coleccionProductos, where("precio", "<", 10000), limit(3));//filtro los productos con un valor menor a 10000 y solo obtengo 3
         getDocs(q).then((datos) => {
           setItems(datos.docs.map((prod)=>({id:prod.id, ...prod.data()})))
         });

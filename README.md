@@ -1,3 +1,9 @@
+ Proyecto Final Curso de React: E-Commerce basado en la venta de componentes de PC.
+
+La aplicación esta construida con React, para los estilos utilicé Bootstrap y clases personalizadas, la base de datos está creada con Firebase.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

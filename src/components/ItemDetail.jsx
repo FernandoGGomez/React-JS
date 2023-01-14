@@ -12,7 +12,6 @@ const ItemDetail = ({item})=>{
 
         setItemStock(itemStock - cantidad);
         addItem(item,cantidad);
-        // localStorage.setItem('carrito',JSON.stringify([{...item,cantidad:cantidad}]))
        
 
     }

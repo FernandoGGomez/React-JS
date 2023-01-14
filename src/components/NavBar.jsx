@@ -5,7 +5,7 @@ import CartWidget from "./CartWidget";
 const NavBar = () => {
     const [menu,setMenu]= useState(false);
 
-    const opcionesMenu = () => {
+    const opcionesMenu = () => { //este metodo es para acivar o desactivar el menu desplegable
 
         setMenu(!menu);
 

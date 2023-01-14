@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from "react";
 import { useParams } from "react-router-dom";
-import productos from "./json/productos.json"
 import ItemDetail from "./ItemDetail";
 import Loader from "./Loader";
 import { getDoc,doc, getFirestore } from "firebase/firestore";
@@ -9,34 +8,22 @@ const ItemDetailContainer = ()=>{
 
     const[item,setItem] = useState([]);
     const[loading,setLoading] = useState(true);
-    const {id} = useParams();
+    const {id} = useParams(); //obtengo el id de la URL
     const [disponible,setDisponible] = useState(true);
 
-    // useEffect(() => {
-    //     const promesa = new Promise((resolve, reject) => {
-    //         setTimeout(() => {
-    //             resolve(productos.find(item => item.id === parseInt(id))); 
-    //         }, 500);
-    //     });
-
-    //     promesa.then((data) => {
-    //         setLoading(false);
-    //         setItem(data);
-    //     })
-    // }, [id]);
 
     useEffect(()=>{
-        const db = getFirestore();
-        const producto = doc(db,"productos",id);
+        const db = getFirestore(); //obtengo la base de datos
+        const producto = doc(db,"productos",id); //obtengo un producto de la coleccion productos que coincida con el id de la URL
         getDoc(producto).then((datos)=>{
-            if(datos.exists()){
-                
+            if(datos.exists()){ 
+                //si el producto existe lo seteo en items
                 setItem({id:datos.id,...datos.data()});
                 setLoading(false);
                 setDisponible(true);
-            }else{
 
-                console.log("El producto no se encuentra disponible")
+            }else{
+                //si el producto no existe setDisponible es falso y se va a renderizar el componente Error404
                 setDisponible(false)
 
             }

@@ -5,7 +5,7 @@ import { CartContext } from "./context/CartContext";
 
 const Checkout = ()=>{
 
-    const {carrito,cartTotal,clear,sumTotal} = useContext(CartContext);
+    const {carrito,clear,sumTotal} = useContext(CartContext);
     const [nombre, setNombre] = useState("");
     const [nombreError,setNombreError] = useState("");
     const [telefono, setTelefono] = useState("");
@@ -13,7 +13,6 @@ const Checkout = ()=>{
     const [email, setEmail] = useState("");
     const [emailError,setEmailError] = useState("");
     const [orderId, setOrderId] = useState("");
-    // const [validado,setValidado] = useState(true);
 
     
 
@@ -21,11 +20,6 @@ const Checkout = ()=>{
     const validarForm = ()=>{
 
         const validarEmail= /\w+@\w+\.+[a-z]/;
-        // if (!validarEmail){
-        
-        // }else{
-        //     setValidado(false)
-        // }
 
         setNombreError("");
         setEmailError("");
@@ -90,10 +84,9 @@ const Checkout = ()=>{
             
         };
         
-        const db = getFirestore();
-        const orderCollection = collection(db,"orders");
-        addDoc(orderCollection,order).then((orden)=> setOrderId(orden.id));
-        console.log(orderId)
+        const db = getFirestore(); //obtengo la base de datos
+        const orderCollection = collection(db,"orders"); //hago una conección con la coleccion "orders"
+        addDoc(orderCollection,order).then((orden)=> setOrderId(orden.id)); //subo la orden a la colección "orders"
 
         clear()
 

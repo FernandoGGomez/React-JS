@@ -7,24 +7,20 @@ import {  collection, getDocs, getFirestore, query, where, } from "firebase/fire
 
 const ItemsListContainer = () => {
 
-  // const {prods} = useContext(ConstextoFiltro);
-
-
-
+  
     const[items,setItems] = useState([]);
     const[loading,setLoading] = useState(true);
-    const {id} = useParams();
+    const {id} = useParams(); //obtengo el id de la URL
     
     
 
     useEffect(()=>{
 
-      const db = getFirestore();
-      const coleccionProductos = collection(db,"productos");
-      const q = id ? query(coleccionProductos,where("categoria","==",id)):coleccionProductos;
+      const db = getFirestore(); //obtengo la base de datos
+      const coleccionProductos = collection(db,"productos"); //obtengo la coleccion donde se guardan los productos
+      const q = id ? query(coleccionProductos,where("categoria","==",id)):coleccionProductos; //filtro los productos de acuerdo al id en la URL
       getDocs(q).then((datos) => {
         setItems(datos.docs.map((prod)=>({id:prod.id, ...prod.data()})))
-        console.log(datos)
       });
 
       setLoading(false);

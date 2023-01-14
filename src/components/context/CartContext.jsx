@@ -16,7 +16,6 @@ const CartContextProvider =({children})=>{
 
             setCarrito(car);   //lo seteo en carrito
 
-            // localStorage.setItem('carrito',JSON.stringify(carrito))
     
         }
 
@@ -40,20 +39,16 @@ const CartContextProvider =({children})=>{
             setCarrito([...carrito]);
             localStorage.setItem('carrito',JSON.stringify([...carrito]))
 
-            console.log(carrito)
-
             
         }else{
 
             setCarrito([...carrito,{...item,cantidad:cantidad}]); //si no se encuentra seteo el objeto al carrito
             localStorage.setItem('carrito',JSON.stringify([...carrito,{...item,cantidad:cantidad}]))
 
-            console.log([...carrito,{...item,cantidades:cantidad}])
-
 
         }
     
-        // localStorage.setItem('carrito',JSON.stringify(carrito))
+     
     
 }
 

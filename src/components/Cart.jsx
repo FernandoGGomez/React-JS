@@ -15,7 +15,6 @@ const Cart = ()=>{
                 <div className="row my-5">
                     <div className="col-md-12 text-center">
                         <div className="alert alert-danger" role="alert">No se encontraron Productos en el Carrito!</div>
-                        {/* <button type="button" onClick={cargarCarrito()}></button> */}
                         <Link to={"/"} className="btn btn-primary">Volver a la Página Principal</Link>
                     </div>
                 </div>
@@ -63,7 +62,7 @@ const Cart = ()=>{
                     </div>
                    ))}
     
-    {/* {localStorage.setItem('carrito',JSON.stringify(carrito))} */}
+    
                     <div className="container mb-4 border">
                         <div className="row">
                             <div className="col-6 col2"></div>

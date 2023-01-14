@@ -6,21 +6,21 @@ import { getFirestore,getDoc,doc,collection,query } from "firebase/firestore";
 
 const TankYou = () =>{
 
-    const {id} = useParams();
+    const {id} = useParams(); //obtengo el id de la URL
     const[items,setItems] = useState([]);
-    const [comprador,setComprador] = useState([]);
+    const [comprador,setComprador] = useState([]); 
     const [total,setTotal] = useState(0);
 
     useEffect(()=>{
 
-        const db = getFirestore();
-        const ordersCollection = collection(db,"orders");
-        const factura = doc(ordersCollection,id)
+        const db = getFirestore(); //obtengo la base de datos
+        const ordersCollection = collection(db,"orders"); //obtengo la coleccion donde se guardan las compras
+        const factura = doc(ordersCollection,id) //obtengo el documento que coincida con el id de de la url
         const q = query(factura);
         getDoc(q).then((datos) => {
-            setItems(datos.data().items.map((prod)=>(prod)))
-            setTotal(datos.data().total)
-            setComprador(datos.data().buyer)
+            setItems(datos.data().items.map((prod)=>(prod))) //seteo los productos de la orden
+            setTotal(datos.data().total)  //seteo el valor total de la compra
+            setComprador(datos.data().buyer)  //seteo los datos del comprador
           
         });
     
@@ -30,7 +30,7 @@ const TankYou = () =>{
             <h1 className="h1-telefono">Gracias por tu compra {comprador.name}</h1>
             <div className="container alert alert-primary text-center" role="alert" >El ID de su compra es: <b>{id}</b></div>
             <h4 className="text-center">Se envió una copia de tu factura a <b>{comprador.email}</b>(En realidad no se envió jaja) </h4>
-            {console.log(items)}
+            
             <div className="my-5" >        
                 
                 

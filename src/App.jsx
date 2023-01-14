@@ -16,8 +16,6 @@ function App() {
     <CartContextProvider>
       <BrowserRouter> 
                 <NavBar/>
-                {/* <BotonesFiltrado/> */}
-
                 <Routes>
                     <Route path={"/"} element={<ItemsListContainer />} />
                     <Route path={"/categoria/:id"} element={<ItemsListContainer />} />
