@@ -1,7 +1,7 @@
 import React ,{useEffect,useState}from "react";
 import { Link,useParams } from "react-router-dom";
-import { getFirestore,getDoc,doc,collection,query,where,limit } from "firebase/firestore";
-import ItemList from "./ItemList"
+import { getFirestore,getDoc,doc,collection,query } from "firebase/firestore";
+
 
 
 const TankYou = () =>{
@@ -10,7 +10,6 @@ const TankYou = () =>{
     const[items,setItems] = useState([]);
     const [comprador,setComprador] = useState([]);
     const [total,setTotal] = useState(0);
-    const esto = "elQueYoCree"
 
     useEffect(()=>{
 
@@ -22,8 +21,6 @@ const TankYou = () =>{
             setItems(datos.data().items.map((prod)=>(prod)))
             setTotal(datos.data().total)
             setComprador(datos.data().buyer)
-        //   setItems(datos.docs.map((prod)=>(console.log(prod.data().items))));
-        //   setComprador(datos.docs.map((user)=>(console.log(user.data().buyer))));
           
         });
     
