@@ -2,9 +2,7 @@ import React,{useState,useEffect,useContext} from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import Loader from "./Loader";
-import { addDoc, collection, getDocs, getFirestore, query, where, limit, getDoc } from "firebase/firestore"; 
-import BotonesFiltrado from "./BotonesFiltrado";
-import { ConstextoFiltro } from "./context/ContextoFiltro";
+import {  collection, getDocs, getFirestore, query, where, } from "firebase/firestore"; 
 
 
 const ItemsListContainer = () => {
@@ -35,7 +33,7 @@ const ItemsListContainer = () => {
    
 
   return  <div className="container margen">
-              {/* <div><BotonesFiltrado/></div> */}
+              
                     {loading ? <Loader/> : <ItemList items={items}/>}
                                   
                         

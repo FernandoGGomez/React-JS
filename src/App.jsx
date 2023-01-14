@@ -7,7 +7,6 @@ import Cart from './components/Cart';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Error404 from './components/Error404';
 import Footer from './components/Footer';
-import BotonesFiltrado from './components/BotonesFiltrado';
 import Checkout from './components/Checkout';
 import TankYou from './components/ThankYou';
 
