@@ -41,15 +41,15 @@ return (<div>
             <div className="row mb-3">
                 <div className="col-md-5 text-center">
                     <div className="btn-group" role="group" aria-label="Basic outlined example">
-                        <button type="button" className="btn btn-outline-primary" onClick={decrementar}> - </button>
-                        <button type="button" className="btn btn-outline-primary">{contador}</button>
-                        <button type="button" className="btn btn-outline-primary" onClick={incrementar}> + </button>
+                        <button type="button" className="btn btn-outline-primary btn-telefono" onClick={decrementar}> - </button>
+                        <button type="button" className="btn btn-outline-primary btn-telefono">{contador}</button>
+                        <button type="button" className="btn btn-outline-primary btn-telefono" onClick={incrementar}> + </button>
                     </div>
                 </div>
             </div>
             <div className="row">
                 <div className="col-md-5 text-center">
-                    {vendido ?<Link type="button" className="btn btn-outline-primary" to={"/cart"}>Terminar Compra</Link>:<button type="button" id="boton1"className="btn btn-outline-primary" onClick={()=>{addToCart(contador)}}>Agregar al Carrito</button>}
+                    {vendido ?<Link type="button" className="btn btn-outline-primary btn-telefono" to={"/cart"}>Terminar Compra</Link>:<button type="button" id="boton1"className="btn btn-outline-primary btn-telefono" onClick={()=>{addToCart(contador)}}>Agregar al Carrito</button>}
                 </div>
             </div>
         </div>

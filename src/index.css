@@ -96,8 +96,15 @@ code {
   margin-left: 26%;
 }
 
-
+.container-checkout{
+  margin-left: 15%; 
+  margin-top: 5%;
+}
 /* NAV */
+
+.navbar-toggler{
+  background-color: white;
+}
 .contenedor-nav{
   position: sticky;
   top: 0.1px;
@@ -106,7 +113,12 @@ code {
   background-color: black;
 }
 .menu{
-  display: none;
+  display: flex;
+  flex-direction: column;
+  height: 0px;
+  overflow: hidden;
+  position: fixed;
+  transition: all .5s ease;
 }
 
 .menu.desplegado{
@@ -114,7 +126,8 @@ code {
   display: flex;
   flex-direction: column;
   position: fixed;
-  margin-top: 23%;
+  height: auto;
+  margin-top: 1.8%;
   padding: 25px;
   border-right: 3px solid #0a9cf3;
   border-left: 3px solid #0a9cf3;;
@@ -131,6 +144,7 @@ code {
 .nav-link:hover{
   color: rgb(255, 255, 255);
   filter: drop-shadow(rgba(10, 156, 243, 0.95) 0px 0px 2.20251px) drop-shadow(rgba(71, 123, 255, 0.75) 0px 0px 11.0125px) drop-shadow(rgba(71, 255, 218, 0.44) 0px 0px 33.0376px);
+  box-sizing: content-box;
 }
 .navbar-nav .nav-link.active{
   color: rgb(10, 156, 243);
@@ -141,8 +155,121 @@ code {
 
 @media screen and (max-width:480px) {
 
+  /* NAV */
   .navbar-brand{
     display: none;
   }
+  .menu.desplegado{
 
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 1%;
+    padding: 25px;
+    border-right: 3px solid #0a9cf3;
+    border-left: 3px solid #0a9cf3;;
+    border-bottom: 3px solid #0a9cf3;;
+    background-color: #000000
+  
+  
+  }
+
+  /* ItemList */
+  .ajustado{
+    margin-left: 15%;
+    margin-top: 12%;
+  }
+
+  .col12{
+    width: 100%;
+  }
+  .card{
+    margin-right: 0px;
+    width: 83.33333333%;;
+  }
+  .item_list{
+    flex-direction: column;
+    align-items: center;
+  }
+ .item{
+  margin-right: 0 !important;
+ }
+ .contenedor_imgen{
+  width: 100%;
+ }
+  .margen{
+    margin-left: 0;
+  }
+
+/* checkout */
+
+.container-checkout{
+  margin-top: 5%;
+  flex-direction: column-reverse;
+  text-align: center;
+  margin-left: 0;
+}
+.checkout-carrito{
+  flex-direction: column;
+}
+
+.btn-telefono{
+  padding: 25px;
+}
+
+.precio-telefono{
+  font-size: 2.5rem;
+}
+
+.width-auto{
+  width: auto;
+}
+
+.width-100{
+  width: 100%;
+}
+
+.text-centrado{
+  text-align: center !important;
+}
+/* Carrito */
+
+.col0{
+  width: 0;
+}
+
+.col1{
+  width: 8.33333333%;;
+}
+
+.col2{
+width: 16.66666667%;
+font-size: 20px;
+}
+.col4{
+  width:33.33333333%;
+}
+.col6{
+  width: 50%;
+}
+
+.space-evenly-telefono{
+  justify-content: space-evenly;
+}
+.column-telefono{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-end-telefono{
+  text-align: end;
+}
+
+
+/* Tankyou */
+
+.h1-telefono{
+  font-size: 25px;
+}
 }

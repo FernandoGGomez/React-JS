@@ -5,7 +5,7 @@ import CartWidget from "./CartWidget";
 const NavBar = () => {
     const [menu,setMenu]= useState(false);
 
-    const mouseOver = () => {
+    const opcionesMenu = () => {
 
         setMenu(!menu);
 
@@ -22,8 +22,9 @@ const NavBar = () => {
                                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                                 </button>
-                                <div className="collapse navbar-collapse" id="navbarNav">
-                                <NavLink className="nav-link" onMouseOver={mouseOver} aria-current="page" to={"/"}>Todos los Productos</NavLink>
+                                <div className="collapse navbar-collapse text-center" id="navbarNav">
+                                <NavLink className="nav-link"  aria-current="page" to={"/"}>Todos los Productos</NavLink>
+                                <div className=""  onClick={opcionesMenu}>Ver más
                                     <ul className={`navbar-nav menu ${menu ? "desplegado":""}`}>
                                     
                                         <li className="nav-item">
@@ -39,6 +40,7 @@ const NavBar = () => {
                                             <NavLink className="nav-link" to={"/categoria/Nosotros"}>Nosotros</NavLink>
                                         </li>
                                     </ul>
+                                    </div>
                                 </div>
                             </div>
                         </nav>

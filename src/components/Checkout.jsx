@@ -13,27 +13,41 @@ const Checkout = ()=>{
     const [email, setEmail] = useState("");
     const [emailError,setEmailError] = useState("");
     const [orderId, setOrderId] = useState("");
+    // const [validado,setValidado] = useState(true);
 
-    useEffect(()=>{
+    
 
-
-
-
-    },[])
-
-
+    
     const validarForm = ()=>{
 
-        if(nombre == ""){
+        const validarEmail= /\w+@\w+\.+[a-z]/;
+        // if (!validarEmail){
+        
+        // }else{
+        //     setValidado(false)
+        // }
+
+        setNombreError("");
+        setEmailError("");
+        setTelefonoError("");
+
+
+        if(nombre === ""){
 
             setNombreError("Campo Obligatorio*");
             
             
-        }else if( telefono == ""){
+        }else if( telefono === "" && email === ""){
 
                 setTelefonoError("Campo Obligatorio*");
+                setEmailError("Campo Obligatorio*");
 
-        }else if(email == ""){
+        }else if( telefono === ""){
+
+            setTelefonoError("Campo Obligatorio*");
+            
+
+        }else if(email === ""){
 
                 setEmailError("Campo Obligatorio*");
             
@@ -43,12 +57,14 @@ const Checkout = ()=>{
 
         }else if(telefono.length < 5 || telefono.length > 15){
 
-                setTelefonoError("Introduzca un número de teléfono válido*");
+                setTelefonoError("Introduzca un número de teléfono válido*(mínimo 6 caracteres,máximo 15 caracteres)");
 
 
-        }else if(!email.includes("@") || !email.includes(".com")){
+        }else if(!validarEmail.test(email)){
 
-            setEmailError("Email no válido*")
+            
+            setEmailError("Formato de email no válido*(debe contener @ y .com)")
+            
 
         }else{
 
@@ -68,7 +84,7 @@ const Checkout = ()=>{
         const fecha = new Date();
         const order = {
             buyer:{name:nombre, phone:telefono, email:email},
-            items:carrito.map(prod => ({id:prod.id,title:prod.nombre,quantity:prod.cantidad,price:prod.precio,price_total:prod.precio * prod.cantidad})),
+            items:carrito.map(prod => ({id:prod.id,title:prod.nombre,quantity:prod.cantidad,price:prod.precio,price_total:prod.precio * prod.cantidad,img:prod.img})),
             total:sumTotal(),
             order_date:`${fecha.getFullYear()}-${fecha.getMonth() + 1}-${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`
             
@@ -85,9 +101,12 @@ const Checkout = ()=>{
 }
 
 return <>
-<div className="container row" style={{height:"56vh",marginLeft: "15%", marginTop: "5%"}}>
+<div className="container mt-3">
+    <h1 className="text-center alert alert-primary">Estás a un paso de terminar tu compra!!</h1>
+</div>
+<div className="container row container-checkout" >
 
-    <div className="col-6"> 
+    <div className="col-6 width-100"> 
                 <form>
                         <div className="mb-3">
                             <label for="nombre" className="form-label">Nombre:</label>
@@ -107,33 +126,33 @@ return <>
                         <button type="button" className="btn btn-primary" onClick={validarForm}>Generar Orden</button>
                 </form>
     </div>
-    <div className="col-6">
+    <div className="col-6 width-100">
     {carrito.map(prod =>(
     <div className="col-12 container border-top" key={prod.id}>
         
             
-        <div className="row mb-5 align-items-center border-bottom">
-            <div className="col-4 text-center">
+        <div className="row mb-5 align-items-center border-bottom checkout-carrito">
+            <div className="col-4 text-center width-auto">
                 <img src={prod.img} width={120} alt={prod.nombre} />
             </div>
-            <div className="col-3">
+            <div className="col-3 width-auto">
                 
                 <h5>{prod.nombre}</h5>    
             </div>    
-            <div className="col-2 text-center">
+            <div className="col-2 text-center width-auto">
                 
                 <h5>x{prod.cantidad}</h5>    
             </div> 
-            <div className="col-2">
+            <div className="col-2 width-auto">
                 
                 <h5>${prod.precio}</h5>    
             </div>
-            <div className="col-1">  
+            <div className="col-1 width-auto">  
             </div>  
         </div>
     </div>
    ))}
-   <div className="text-end mb-5"><h4><u>Total a Pagar:</u> <b>${sumTotal()}</b></h4></div>
+   <div className="text-end text-centrado mb-5"><h4>Total a Pagar: <b>${sumTotal()}</b></h4></div>
    </div>
    </div>
    <div className="text-center">

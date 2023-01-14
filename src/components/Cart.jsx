@@ -24,14 +24,14 @@ const Cart = ()=>{
         
        }
 
-       return( <div>
-                    <h1 className="text-center">Carrito</h1>
+       return( <div >
+                    <h1 className="text-center my-5">Carrito</h1>
                     <div className="container mb-4">
-                        <div className="row">
-                            <div className="col-4"></div>
-                            <h4 className="col-3 fw-bold mb-3">Producto</h4>
-                            <h4 className="col-2 fw-bold mb-3 text-center">Cantidad</h4>
-                            <h4 className="col-3 fw-bold mb-3">Precio</h4>
+                        <div className="row space-evenly-telefono">
+                            <div className="col-4 col0"></div>
+                            <h4 className="col-3 fw-bold mb-3 col2">Producto</h4>
+                            <h4 className="col-2 fw-bold mb-3 col2 text-center">Cantidad</h4>
+                            <h4 className="col-3 fw-bold mb-3 col2">Precio</h4>
                         </div>
 
                     </div>
@@ -47,7 +47,7 @@ const Cart = ()=>{
                                 
                                 <h5>{prod.nombre}</h5>    
                             </div>    
-                            <div className="col-2 text-center">
+                            <div className="col-2 col1 text-center">
                                 
                                 <h5>{prod.cantidad}</h5>    
                             </div> 
@@ -55,9 +55,9 @@ const Cart = ()=>{
                                 
                                 <h5>${prod.precio * prod.cantidad}</h5>    
                             </div>
-                            <div className="col-1">
+                            <div className="col-1 col2 text-end-telefono">
                                 
-                                <h5><Link onClick={() => {removeItem(prod.id)}} title={`Eliminar ${prod.nombre} Del Carrito`}><i className="fa-solid fa-trash"></i></Link></h5>    
+                                <h5><Link onClick={() => {removeItem(prod.id)}} title={`Eliminar ${prod.nombre} Del Carrito`}><i className="fa-solid fa-trash" style={{fontSize:"25px",marginLeft:"15px"}}></i></Link></h5>    
                             </div>  
                         </div>
                     </div>
@@ -66,18 +66,18 @@ const Cart = ()=>{
     {/* {localStorage.setItem('carrito',JSON.stringify(carrito))} */}
                     <div className="container mb-4 border">
                         <div className="row">
-                            <div className="col-6"></div>
-                            <h4 className="col-3 fw-bold mb-4">Total a pagar:</h4>
-                            <h4 className="col-3 fw-bold mb-4">${sumTotal()}</h4>
+                            <div className="col-6 col2"></div>
+                            <h4 className="col-3 fw-bold mb-4 col6">Total a pagar:</h4>
+                            <h4 className="col-3 fw-bold mb-4 col4">${sumTotal()}</h4>
                         </div>
 
                     </div>
             
             <div className="container d-flex justify-content-end">
-                <span className="btn btn-primary" type="button" onClick={clear}>Vaciar Carrito</span>
+                <span className="btn btn-primary my-3" type="button" onClick={clear}>Vaciar Carrito</span>
             </div>
             <div className="container d-flex justify-content-end">
-                <Link to={"/checkout"} className="btn btn-primary">Terminar Compra</Link>
+                <Link to={"/checkout"} className="btn btn-primary my-3">Terminar Compra</Link>
             </div>
                 
             

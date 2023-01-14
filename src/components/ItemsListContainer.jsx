@@ -26,6 +26,7 @@ const ItemsListContainer = () => {
       const q = id ? query(coleccionProductos,where("categoria","==",id)):coleccionProductos;
       getDocs(q).then((datos) => {
         setItems(datos.docs.map((prod)=>({id:prod.id, ...prod.data()})))
+        console.log(datos)
       });
 
       setLoading(false);

@@ -38,14 +38,16 @@ const CartContextProvider =({children})=>{
             let i = carrito.findIndex(prod => prod.id === item.id) //encuentro su posición
             carrito[i].cantidad += cantidad; 
             setCarrito([...carrito]);
-            
+            localStorage.setItem('carrito',JSON.stringify([...carrito]))
+
             console.log(carrito)
 
             
         }else{
 
             setCarrito([...carrito,{...item,cantidad:cantidad}]); //si no se encuentra seteo el objeto al carrito
-      
+            localStorage.setItem('carrito',JSON.stringify([...carrito,{...item,cantidad:cantidad}]))
+
             console.log([...carrito,{...item,cantidades:cantidad}])
 
 

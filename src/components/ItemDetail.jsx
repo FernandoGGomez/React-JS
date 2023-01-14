@@ -12,7 +12,7 @@ const ItemDetail = ({item})=>{
 
         setItemStock(itemStock - cantidad);
         addItem(item,cantidad);
-        localStorage.setItem('carrito',JSON.stringify([item]))
+        // localStorage.setItem('carrito',JSON.stringify([{...item,cantidad:cantidad}]))
        
 
     }
@@ -23,16 +23,17 @@ const ItemDetail = ({item})=>{
 
     },[item]);
 
- return <div className="row align-items-center">
+ return <div className="row align-items-center col12">
 
-                <div className="col-5 ">
-                    <img src={item.img} alt={item.nombre} />
+                <div className="col-5 col12">
+                    <img className="img-fluid" src={item.img} alt={item.nombre} />
+                   
                 </div>
                 
-                <div className="col-7">
+                <div className="col-7 col12 text-centrado">
                     <h2>{item.nombre}</h2>
                     <p className="descripcion">{item.descripcion}</p>
-                    <p className="precio">$ {item.precio}</p>
+                    <p className="precio precio-telefono">${item.precio}</p>
                     <div><ItemCount stock={item.stock} onAdd={onAdd}/></div>
                 </div>
 
