@@ -71,6 +71,8 @@ const clear = () => {
 const removeItem = (id) => {
     const productos = carrito.filter(prod => prod.id !== id);
     setCarrito([...productos]);
+    localStorage.setItem('carrito',JSON.stringify([...productos]))
+    
 }
     return (
         <CartContext.Provider value={{addItem,carrito,clear,cartTotal,sumTotal,removeItem}}>
