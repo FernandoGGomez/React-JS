@@ -36,9 +36,6 @@ const NavBar = () => {
                                         <li className="nav-item">
                                             <NavLink className="nav-link" to={"/categoria/placa_madre"}>Motherboards</NavLink>
                                         </li>
-                                        <li className="nav-item">
-                                            <NavLink className="nav-link" to={"/categoria/Nosotros"}>Nosotros</NavLink>
-                                        </li>
                                     </ul>
                                     </div>
                                 </div>
