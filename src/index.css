@@ -7,9 +7,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a{
+  text-decoration: none;
+}
+
+.dark-bg{
+  background-color: #000000;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.item_list{
+justify-content: space-around;
 }
 
 .precio{
@@ -18,6 +30,14 @@ code {
   font-weight: bold;
 }
 
+.contenedor_imgen{
+  width: 80%;
+  margin: auto;;
+}
+
+.ajustado{
+  margin: auto;
+}
 .descripcion{
   margin-left: 5px;
   font-size: 1.2rem;
@@ -58,15 +78,20 @@ code {
 } 
 /* ------------------------------------------------ */
 
-.m{
+/* Footer */
 
-  background-color: rgba(0, 0, 0, 0.2)
-
-}
-.n{
+.footer{
   background-color: #f1f1f1;
 }
+.dark-footer{
+  background-color: #000000;
+}
+.footer-2{
+  background-color: rgba(0, 0, 0, 0.2)
+}
 
+
+/* -------------------- */
 .div-filtro{
   /* width: 400px; */
   background-color: rgb(243, 236, 236);
@@ -75,23 +100,19 @@ code {
 }
 
 .contenedor-filtros{
-  /* position: fixed; */
-  /* margin-top: 5%;
-  margin-left: 2%; */
   display: flex;
   list-style: none;
 }
 
 .btn-filtro{
-  /* display: list-item; */
-  /* margin-top: 5px; */
+
   margin: 0px 10px;
-  /* font-size: small; */
+  
 }
 
 .margen{
   margin-top: 5%;
-  margin-left: 26%;
+  
 }
 
 .container-checkout{
@@ -107,9 +128,13 @@ code {
   position: sticky;
   top: 0.1px;
   z-index: 90;
-  color:white;
-  background-color: black;
+
 }
+
+.ver-mas{
+  cursor: pointer;
+}
+
 .menu{
   display: flex;
   flex-direction: column;
@@ -120,7 +145,6 @@ code {
 }
 
 .menu.desplegado{
-
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -128,27 +152,45 @@ code {
   margin-top: 1.8%;
   padding: 25px;
   border-right: 3px solid #0a9cf3;
-  border-left: 3px solid #0a9cf3;;
-  border-bottom: 3px solid #0a9cf3;;
-  background-color: #000000
-
-
+  border-left: 3px solid #0a9cf3;
+  border-bottom: 3px solid #0a9cf3;
 }
 
 .nav-link{
   color: white;
   padding: 25px
 }
+
+.nav-link-light{
+  color: #000000;
+  font-weight: bold;
+}
+
 .nav-link:hover{
   color: rgb(255, 255, 255);
   filter: drop-shadow(rgba(10, 156, 243, 0.95) 0px 0px 2.20251px) drop-shadow(rgba(71, 123, 255, 0.75) 0px 0px 11.0125px) drop-shadow(rgba(71, 255, 218, 0.44) 0px 0px 33.0376px);
   box-sizing: content-box;
 }
+
 .navbar-nav .nav-link.active{
   color: rgb(10, 156, 243);
 }
-.nav-link.active{
-  color: rgb(10, 156, 243);
+
+.navbar-nav .nav-link-light.active{
+  color: rgb(0, 14, 90);
+}
+
+.dark-nav{
+  color:white;
+  background-color: black;
+}
+
+.light-nav{
+  background-color: rgb(143, 156, 161);
+}
+
+.bi{
+  cursor: pointer;
 }
 
 @media screen and (max-width:480px) {

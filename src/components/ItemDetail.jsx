@@ -1,10 +1,14 @@
 import React,{ useState, useEffect, useContext } from "react";
 import ItemCount from "./ItemCount";
 import { CartContext } from "./context/CartContext";
+import { ThemeContext } from "./context/ThemeContext";
 
 
 const ItemDetail = ({item})=>{
+
     const {addItem } = useContext(CartContext);
+
+    const {dark} = useContext(ThemeContext);
 
     const [itemStock,setItemStock] = useState(0);
 
@@ -22,7 +26,7 @@ const ItemDetail = ({item})=>{
 
     },[item]);
 
- return <div className="row align-items-center col12">
+ return <div className={`row align-items-center col12 ${dark ? "text-white": ""}`}>
 
                 <div className="col-5 col12">
                     <img className="img-fluid" src={item.img} alt={item.nombre} />

@@ -1,17 +1,18 @@
 import React,{ useContext } from "react";
 import { CartContext } from "./context/CartContext";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "./context/ThemeContext";
 
 
 const Cart = ()=>{
 
     const {carrito,cartTotal,clear,sumTotal,removeItem} = useContext(CartContext);
-
+    const {dark} = useContext(ThemeContext);
     
     if(cartTotal() === 0){
 
         return  (
-            <div className="container">
+            <div className={`container ${dark ? "text-white":""}`}>
                 <div className="row my-5">
                     <div className="col-md-12 text-center">
                         <div className="alert alert-danger" role="alert">No se encontraron Productos en el Carrito!</div>
@@ -23,7 +24,7 @@ const Cart = ()=>{
         
        }
 
-       return( <div >
+       return( <div className={`${dark ? "text-white":""}`}>
                     <h1 className="text-center my-5">Carrito</h1>
                     <div className="container mb-4">
                         <div className="row space-evenly-telefono">
@@ -38,7 +39,7 @@ const Cart = ()=>{
                     <div className="container border-top" key={prod.id}>
                         
                             
-                        <div className="row mb-5 align-items-center">
+                        <div className="row my-5 align-items-center">
                             <div className="col-4 text-center">
                                 <img src={prod.img} width={120} alt={prod.nombre} />
                             </div>

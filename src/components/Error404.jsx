@@ -1,13 +1,14 @@
-import React ,{useEffect,useState}from "react";
+import React ,{useEffect,useState,useContext}from "react";
 import { getFirestore,getDocs,collection,query,where,limit } from "firebase/firestore";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ItemList from "./ItemList"
+import { ThemeContext } from "./context/ThemeContext";
 
 
 const Error404 = ()=>{
 
     const[items,setItems] = useState([]);
-  
+    const {dark} = useContext(ThemeContext)  
 
     useEffect(()=>{
 
@@ -20,7 +21,7 @@ const Error404 = ()=>{
   
       },[]);
 
-    return <div className="container text-center">
+    return <div className={`container text-center ${dark ?"text-white":""}`}>
 
             <h1 className="my-5">Error 404 :(</h1>
             <h2 className="my-5">¡Lo sentimos!</h2>

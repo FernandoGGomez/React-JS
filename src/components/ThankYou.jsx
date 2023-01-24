@@ -1,11 +1,13 @@
-import React ,{useEffect,useState}from "react";
+import React ,{useEffect,useState,useContext}from "react";
 import { Link,useParams } from "react-router-dom";
 import { getFirestore,getDoc,doc,collection,query } from "firebase/firestore";
+import { ThemeContext } from "./context/ThemeContext";
 
 
 
 const TankYou = () =>{
 
+    const {dark} = useContext(ThemeContext);
     const {id} = useParams(); //obtengo el id de la URL
     const[items,setItems] = useState([]);
     const [comprador,setComprador] = useState([]); 
@@ -26,7 +28,7 @@ const TankYou = () =>{
     
       },[]);
 
-    return <div className="text-center my-5">
+    return <div className={`text-center my-5 ${dark ?"text-white":""}`}>
             <h1 className="h1-telefono">Gracias por tu compra {comprador.name}</h1>
             <div className="container alert alert-primary text-center" role="alert" >El ID de su compra es: <b>{id}</b></div>
             <h4 className="text-center">Se envió una copia de tu factura a <b>{comprador.email}</b>(En realidad no se envió jaja) </h4>

@@ -1,5 +1,5 @@
-import React,{ useState, createContext } from "react";
-import { useEffect } from "react";
+import React,{ useState, createContext,useEffect } from "react";
+
 
 
 export const CartContext = createContext();
@@ -52,28 +52,28 @@ const CartContextProvider =({children})=>{
     
 }
 
-const sumTotal = () => {
-    return carrito.reduce((total, item) => total += item.cantidad * item.precio, 0);
-}
+    const sumTotal = () => {
+        return carrito.reduce((total, item) => total += item.cantidad * item.precio, 0);
+    }
 
 
-const cartTotal = () => {
-    return carrito.reduce((total, item) => total += item.cantidad, 0);
-}
+    const cartTotal = () => {
+        return carrito.reduce((total, item) => total += item.cantidad, 0);
+    }
 
-const clear = () => {
+    const clear = () => {
 
-    setCarrito([]);
-    localStorage.removeItem('carrito')
+        setCarrito([]);
+        localStorage.removeItem('carrito')
 
-}
+    }
 
-const removeItem = (id) => {
-    const productos = carrito.filter(prod => prod.id !== id);
-    setCarrito([...productos]);
-    localStorage.setItem('carrito',JSON.stringify([...productos]))
-    
-}
+    const removeItem = (id) => {
+        const productos = carrito.filter(prod => prod.id !== id);
+        setCarrito([...productos]);
+        localStorage.setItem('carrito',JSON.stringify([...productos]))
+        
+    }
     return (
         <CartContext.Provider value={{addItem,carrito,clear,cartTotal,sumTotal,removeItem}}>
             {children}

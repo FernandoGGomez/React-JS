@@ -1,18 +1,21 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Link } from "react-router-dom";
+import {ThemeContext} from "./context/ThemeContext";
 
 const Footer = () =>{
 
+        let {dark} = useContext(ThemeContext);
+
     return(
         <div>
-            <footer className="text-center text-white n" >
+            <footer className={`text-center  ${dark ? "text-white dark-footer" : "footer"}`} >
                 {/* Grid container */}
                     <div className="container pt-4">
                 {/* Section: Social media */}
                         <section className="mb-4">
                     {/* Facebook */}
                             <a
-                                className="btn btn-link btn-floating btn-lg text-dark m-1"
+                                className={`btn btn-link btn-floating btn-lg ${dark ? "text-light":"text-dark"} m-1`}
                                 href="#!"
                                 role="button"
                                 data-mdb-ripple-color="dark"
@@ -22,7 +25,7 @@ const Footer = () =>{
 
                    {/* Twitter */}
                             <a
-                            className="btn btn-link btn-floating btn-lg text-dark m-1"
+                            className={`btn btn-link btn-floating btn-lg ${dark ? "text-light":"text-dark"} m-1`}
                             href="#!"
                             role="button"
                             data-mdb-ripple-color="dark"
@@ -31,7 +34,7 @@ const Footer = () =>{
 
                     {/* Google */}
                             <a
-                            className="btn btn-link btn-floating btn-lg text-dark m-1"
+                            className={`btn btn-link btn-floating btn-lg ${dark ? "text-light":"text-dark"} m-1`}
                             href="#!"
                             role="button"
                             data-mdb-ripple-color="dark"
@@ -40,7 +43,7 @@ const Footer = () =>{
 
                     {/* Instagram */}
                             <a
-                            className="btn btn-link btn-floating btn-lg text-dark m-1"
+                            className={`btn btn-link btn-floating btn-lg ${dark ? "text-light":"text-dark"} m-1`}
                             href="#!"
                             role="button"
                             data-mdb-ripple-color="dark"
@@ -49,7 +52,7 @@ const Footer = () =>{
 
                     {/* Linkedin */}
                             <a
-                            className="btn btn-link btn-floating btn-lg text-dark m-1"
+                            className={`btn btn-link btn-floating btn-lg ${dark ? "text-light":"text-dark"} m-1`}
                             href="#!"
                             role="button"
                             data-mdb-ripple-color="dark"
@@ -57,7 +60,7 @@ const Footer = () =>{
                             </a>
                     {/* Github */}
                             <a
-                            className="btn btn-link btn-floating btn-lg text-dark m-1"
+                            className={`btn btn-link btn-floating btn-lg ${dark ? "text-light":"text-dark"} m-1`}
                             href="#!"
                             role="button"
                             data-mdb-ripple-color="dark"
@@ -69,9 +72,9 @@ const Footer = () =>{
                 {/* Grid container */}
 
                 {/* Copyright */}
-                <div className="text-center text-dark p-3 m" >
-                        © 2020 Copyright:
-                        <Link className="text-dark" to="/">TiendaPC.com</Link>
+                <div className="text-center p-3 footer-2">
+                        © 2023 Copyright:
+                        <Link className={`${dark ? "text-secondary" : "text-dark"}`} to="/"> TiendaPC.com</Link>
                 </div>
                 {/* Copyright */}
             </footer> 

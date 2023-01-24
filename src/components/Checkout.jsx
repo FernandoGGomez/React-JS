@@ -1,11 +1,13 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import React,{useContext,useState,useEffect} from "react";
+import React,{useContext,useState} from "react";
 import { Navigate } from "react-router-dom";
 import { CartContext } from "./context/CartContext";
+import { ThemeContext } from "./context/ThemeContext";
 
 const Checkout = ()=>{
 
     const {carrito,clear,sumTotal} = useContext(CartContext);
+    const {dark} = useContext(ThemeContext);
     const [nombre, setNombre] = useState("");
     const [nombreError,setNombreError] = useState("");
     const [telefono, setTelefono] = useState("");
@@ -97,7 +99,7 @@ return <>
 <div className="container mt-3">
     <h1 className="text-center alert alert-primary">Estás a un paso de terminar tu compra!!</h1>
 </div>
-<div className="container row container-checkout" >
+<div className={`container row container-checkout ${dark ?"text-white":""}`} >
 
     <div className="col-6 width-100"> 
                 <form>
